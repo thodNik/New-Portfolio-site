@@ -9,8 +9,15 @@ export default {
             colors: {
                 "navbar-bg": "var(--bg-navbar-color)",
                 "navbar-text": "var(--text-navbar-color)",
+                "home-bg": "var(--bg-home-color)",
             },
         },
+        fontFamily: {
+            playfair: ["Playfair Display", "serif"],
+        },
+        backgroundImage: {
+            'home-img': "url('/src/assets/home_asset.jpg')",
+        }
     },
     plugins: [],
 }
