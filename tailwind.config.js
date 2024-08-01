@@ -14,6 +14,7 @@ export default {
         },
         fontFamily: {
             playfair: ["Playfair Display", "serif"],
+            roboto: ["Roboto", "sans-serif"],
         },
         backgroundImage: {
             'home-img': "url('/src/assets/home_asset.jpg')",
