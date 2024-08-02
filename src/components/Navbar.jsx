@@ -1,141 +1,13 @@
-import React, {useEffect, useRef, useState} from "react"
-import {Link, useLocation} from "react-router-dom";
-import {IoLogoGithub} from "react-icons/io";
-import {IoLogoLinkedin} from "react-icons/io";
-import {FaRegUser} from "react-icons/fa6";
-import {TiDocumentText} from "react-icons/ti";
-import {PiGraduationCapLight} from "react-icons/pi";
+import {useState} from "react"
+import {useLocation} from "react-router-dom";
+import navLinks from "../data/navbar/navLinks.jsx";
+import socials from "../data/navbar/socials.jsx";
+import NavLinkList from "./NavLinkList.jsx";
+import SocialLinks from "./SocialLinks.jsx";
 
 export default function Navbar() {
     const [isSideNavOpen, setIsSideNavOpen] = useState(false)
-    const homeRef = useRef(null);
-    const aboutRef = useRef(null);
-    const resumeRef = useRef(null);
-    const eduRef = useRef(null);
     const {pathname} = useLocation();
-    const date = new Date()
-    const today = date.getFullYear()
-
-    useEffect(() => {
-        switch (pathname) {
-            case "/":
-                homeRef.current?.focus();
-                break;
-            case "/about":
-                aboutRef.current?.focus();
-                break;
-            case "/resume":
-                resumeRef.current?.focus();
-                break;
-            case "/education":
-                eduRef.current?.focus();
-                break;
-        }
-    }, [pathname]);
-
-    const navLinks = [
-        {
-            name: "Home",
-            pathname: "/",
-            icon: <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="h-6 w-6"
-                aria-label="Dashboard icon"
-                role="graphics-symbol"
-            >
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-                />
-            </svg>,
-            ref: homeRef,
-        },
-        {
-            name: "About",
-            pathname: "/about",
-            icon: <FaRegUser
-                style={{
-                    width: "24px",
-                    height: "20px"
-                }}
-            />,
-            ref: aboutRef,
-        },
-        {
-            name: "Resume",
-            pathname: "/resume",
-            icon: <TiDocumentText
-                style={{
-                    width: "24px",
-                    height: "20px"
-                }}
-            />,
-            ref: resumeRef,
-        },
-        {
-            name: "Education",
-            pathname: "/education",
-            icon: <PiGraduationCapLight
-                style={{
-                    width: "24px",
-                    height: "20px"
-                }}
-            />,
-            ref: eduRef,
-        },
-    ];
-
-    const socials = [
-        {
-            href: "https://github.com/thodNik",
-            icon: <IoLogoGithub
-                className="hover:text-gray-200 transition duration-300 ease-in-out"
-                style={{
-                    width: "30px",
-                    height: "45px",
-                }}
-            />
-        },
-        {
-            href: "https://www.linkedin.com/in/nikolaidisthod",
-            icon: <IoLogoLinkedin
-                className="hover:text-gray-200 transition duration-300 ease-in-out"
-                style={{
-                    width: "30px",
-                    height: "45px",
-                }}
-            />
-        },
-    ];
-
-    const navLinkList = navLinks.map(link => (
-        <li className="px-3 border-b border-gray-600">
-            <Link
-                to={link.pathname}
-                ref={link.ref}
-                className={`flex items-center gap-3 rounded p-3 text-navbar-text ${pathname === link.pathname && "focus:text-gray-200 focus:outline-none"}`}
-            >
-                <div className="flex items-center self-center">
-                    {link.icon}
-                </div>
-                <div
-                    className="flex w-full flex-1 flex-col items-start justify-center gap-0 overflow-hidden truncate text-sm">
-                    {link.name}
-                </div>
-            </Link>
-        </li>
-    ))
-
-    const socialLinks = socials.map(social => (
-        <Link to={social.href}>
-            {social.icon}
-        </Link>
-    ));
 
     return (
         <>
@@ -185,17 +57,29 @@ export default function Navbar() {
                 >
                     <div>
                         <ul className="flex flex-1 flex-col gap-1 py-3">
-                            {navLinkList}
+                            {navLinks.map(({name, href, icon}) => (
+                                <NavLinkList
+                                    name={name}
+                                    href={href}
+                                    icon={icon}
+                                    pathname={pathname}
+                                />
+                            ))}
                         </ul>
                     </div>
                 </nav>
                 <footer className="w-44 absolute bottom-8 left-2 text-navbar-text">
                     <div className="flex justify-evenly items-center">
-                        {socialLinks}
+                        {socials.map(({href, icon}) => (
+                            <SocialLinks
+                                href={href}
+                                icon={icon}
+                            />
+                        ))}
                     </div>
                     <div className="mt-5 text-sm text-center font-roboto">
                         <p>Thodoris Nikolaidis</p>
-                        <p>© {today}</p>
+                        <p>© {new Date().getFullYear()}</p>
                     </div>
 
                 </footer>
