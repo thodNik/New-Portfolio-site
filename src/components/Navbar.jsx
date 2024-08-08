@@ -4,6 +4,7 @@ import navLinks from "../data/navbar/navLinks.jsx";
 import socials from "../data/navbar/socials.jsx";
 import NavLinkList from "./NavLinkList.jsx";
 import SocialLinks from "./SocialLinks.jsx";
+import {useShow, useShowUpdate} from "../context/ShowContext.jsx";
 
 export default function Navbar() {
     const [isSideNavOpen, setIsSideNavOpen] = useState(false)
@@ -23,7 +24,7 @@ export default function Navbar() {
                 }`}
                 aria-haspopup="menu"
                 aria-label="Side navigation"
-                aria-expanded={isSideNavOpen ? " true" : "false"}
+                aria-expanded={isSideNavOpen ? "true" : "false"}
                 aria-controls="nav-menu-1"
                 onClick={() => setIsSideNavOpen(!isSideNavOpen)}
             >
@@ -57,24 +58,28 @@ export default function Navbar() {
                 >
                     <div>
                         <ul className="flex flex-1 flex-col gap-1 py-3">
-                            {navLinks.map(({name, href, icon}) => (
-                                <NavLinkList
-                                    name={name}
-                                    href={href}
-                                    icon={icon}
-                                    pathname={pathname}
-                                />
+                            {navLinks.map(({name, href, icon}, i) => (
+                                <div key={i}>
+                                    <NavLinkList
+                                        name={name}
+                                        href={href}
+                                        icon={icon}
+                                        pathname={pathname}
+                                    />
+                                </div>
                             ))}
                         </ul>
                     </div>
                 </nav>
                 <footer className="w-44 absolute bottom-8 left-2 text-navbar-text">
                     <div className="flex justify-evenly items-center">
-                        {socials.map(({href, icon}) => (
-                            <SocialLinks
-                                href={href}
-                                icon={icon}
-                            />
+                        {socials.map(({href, icon}, i) => (
+                            <div key={i}>
+                                <SocialLinks
+                                    href={href}
+                                    icon={icon}
+                                />
+                            </div>
                         ))}
                     </div>
                     <div className="mt-5 text-sm text-center font-roboto">
