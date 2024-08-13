@@ -1,10 +1,9 @@
 import {useState} from "react"
 import {useLocation} from "react-router-dom";
-import navLinks from "../data/navbar/navLinks.jsx";
-import socials from "../data/navbar/socials.jsx";
+import navLinks from "../data/navbar/NavLinks.jsx";
+import socials from "../data/navbar/Socials.jsx";
 import NavLinkList from "./NavLinkList.jsx";
 import SocialLinks from "./SocialLinks.jsx";
-import {useShow, useShowUpdate} from "../context/ShowContext.jsx";
 
 export default function Navbar() {
     const [isSideNavOpen, setIsSideNavOpen] = useState(false)

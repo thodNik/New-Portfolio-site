@@ -10,6 +10,7 @@ export default {
                 "navbar-bg": "var(--bg-navbar-color)",
                 "navbar-text": "var(--text-navbar-color)",
                 "home-bg": "var(--bg-home-color)",
+                "page-bg": "var(--bg-page-color)"
             },
         },
         fontFamily: {

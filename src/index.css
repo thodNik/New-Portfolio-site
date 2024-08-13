@@ -7,7 +7,8 @@
 
 
 :root {
-    --bg-navbar-color: #292b2f;
+    --bg-navbar-color: #1a1a1d;
     --text-navbar-color: #9ca3af;
     --bg-home-color: #151515;
+    --bg-page-color: #2b2e2f
 }
