@@ -16,7 +16,7 @@ export default function Navbar() {
             <button
                 title="Side navigation"
                 type="button"
-                className={`visible fixed left-6 top-6 z-40 order-10 block h-10 w-10 self-center rounded bg-white opacity-100 lg:hidden ${
+                className={`visible fixed right-6 top-6 z-40 order-10 block h-10 w-10 self-center rounded bg-navbar-text opacity-100 lg:hidden ${
                     isSideNavOpen
                         ? "visible opacity-100 [&_span:nth-child(1)]:w-6 [&_span:nth-child(1)]:translate-y-0 [&_span:nth-child(1)]:rotate-45 [&_span:nth-child(3)]:w-0 [&_span:nth-child(2)]:-rotate-45 "
                         : ""
@@ -47,7 +47,7 @@ export default function Navbar() {
             <aside
                 id="nav-menu-1"
                 aria-label="Side navigation"
-                className={`fixed top-0 bottom-0 left-0 z-40 flex w-52 flex-col bg-navbar-bg transition-transform lg:translate-x-0 ${
+                className={`fixed top-0 bottom-0 left-0 z-40 flex xl:w-52 flex-col bg-navbar-bg transition-transform lg:translate-x-0 ${
                     isSideNavOpen ? "translate-x-0" : " -translate-x-full"
                 }`}
             >
@@ -64,13 +64,14 @@ export default function Navbar() {
                                         href={href}
                                         icon={icon}
                                         pathname={pathname}
+                                        setIsSideNavOpen={(value) => setIsSideNavOpen(value)}
                                     />
                                 </div>
                             ))}
                         </ul>
                     </div>
                 </nav>
-                <footer className="w-44 absolute bottom-8 left-2 text-navbar-text">
+                <footer className="xl:w-44 absolute bottom-8 inset-x-2 xl:inset-x-4 text-navbar-text">
                     <div className="flex justify-evenly items-center">
                         {socials.map(({href, icon}, i) => (
                             <div key={i}>

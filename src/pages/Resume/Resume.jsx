@@ -10,14 +10,14 @@ const Resume = () => {
 
     return (
         <MainLayout>
-            <div className="min-h-screen py-12 px-32 bg-page-bg">
+            <div className="min-h-screen p-4 lg:py-12 lg:px-32 bg-page-bg">
                 <PageHeading title={"Resume"} icon={icon}/>
                 <div className="mt-14 text-center">
                     <UnderlinedHeading heading={"Experience"}/>
                 </div>
-                <div className="grid grid-cols-2 mt-14 gap-8">
+                <div className="grid 2xl:grid-cols-2 mt-6 xl:mt-14 gap-8">
                     {experiences.map(({role, company, description, from, to}) => (
-                        <div className="px-24">
+                        <div className="p-4 lg:px-24">
                             <ExperienceContent
                                 key={role}
                                 role={role}

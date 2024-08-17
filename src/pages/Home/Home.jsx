@@ -3,7 +3,7 @@ import MainLayout from "../../layouts/MainLayout.jsx";
 const Home = () => {
     return (
         <MainLayout>
-            <div className="relative min-h-screen xl:flex">
+            <div className="relative min-h-screen md:flex">
                 <div className="absolute w-full top-1/3 z-20 text-gray-200 text-center space-y-4">
                     <h1 className="font-playfair text-4xl xl:text-6xl uppercase">
                         Thodoris <span className="text-orange-400 font-extrabold">Nikolaidis</span>

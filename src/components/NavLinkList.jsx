@@ -1,12 +1,13 @@
 import {useNavigate} from "react-router-dom";
 import {useShowUpdate} from "../context/ShowContext.jsx";
 
-const NavLinkList = ({name, href, icon, pathname}) => {
+const NavLinkList = ({name, href, icon, pathname, setIsSideNavOpen}) => {
     const navigate = useNavigate();
     const updateShow = useShowUpdate();
 
     const handleClick = async () => {
         await updateShow(false);
+        setIsSideNavOpen(false);
 
         setTimeout(() => {
             navigate(href);

@@ -10,14 +10,14 @@ const Education = () => {
 
     return (
         <MainLayout>
-            <div className="min-h-screen py-12 px-32 bg-page-bg">
+            <div className="min-h-screen p-4 lg:py-12 lg:px-32 bg-page-bg">
                 <PageHeading title={"Education"} icon={icon}/>
                 <div className="mt-14 text-center">
-                    <UnderlinedHeading heading={"Degrees & Certifications"}/>
+                    <UnderlinedHeading heading={"Degrees & Cert."}/>
                 </div>
-                <div className="grid grid-cols-2 mt-14 gap-8">
+                <div className="grid 2xl:grid-cols-2 mt-14 gap-8">
                     {educations.map(({role, company, description, from, to}) => (
-                        <div className="px-24">
+                        <div className="p-4 lg:px-24">
                             <ExperienceContent
                                 key={role}
                                 role={role}
@@ -29,7 +29,7 @@ const Education = () => {
                         </div>
                     ))}
                 </div>
-                <div className="mt-14 text-center">
+                <div className="mt-6 sm:mt-14 mb-6 sm:mb-0 text-center">
                     <UnderlinedHeading heading={"Languages"}/>
                     <ul className="flex mt-4 text-gray-200 text-xl font-semibold justify-center items-center">
                         {languages.map(({value}, i) =>

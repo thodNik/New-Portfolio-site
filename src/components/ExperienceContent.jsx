@@ -1,6 +1,6 @@
 const ExperienceContent = ({key, role, company, description, from, to}) => {
     return (
-        <div key={key} className="relative text-gray-200 pl-8 py-4 pr-4 my-8">
+        <div key={key} className="relative text-gray-200 pl-8 py-8 pr-4 my-8">
             <span className="absolute w-0.5 h-full top-0 -left-2.5 bg-orange-400">
                 <span
                     className="absolute before:content-[''] size-2.5 border-2 border-orange-400 rounded-full -top-2.5 -left-1"></span>
@@ -13,8 +13,8 @@ const ExperienceContent = ({key, role, company, description, from, to}) => {
             <p className="font-roboto mt-4">{description}</p>
 
             <span className="absolute h-full top-0 -left-2.5">
-                <span className="absolute text-nowrap -top-[17px] -left-[71px]">{to}</span>
-                    <span className="absolute text-nowrap -bottom-[16px] -left-[71px]">{from}</span>
+                <span className="absolute text-nowrap -top-[17px] left-3 lg:-left-[71px]">{to}</span>
+                    <span className="absolute text-nowrap -bottom-[16px] left-3 lg:-left-[71px]">{from}</span>
             </span>
         </div>
     );
