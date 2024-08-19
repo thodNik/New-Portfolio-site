@@ -17,7 +17,7 @@ const Resume = () => {
                 </div>
                 <div className="grid xl:grid-cols-2 mt-6 xl:mt-14 gap-8">
                     {experiences.map(({role, company, description, from, to}) => (
-                        <div className="p-4 xl:px-24">
+                        <div className="p-4 lg:px-24">
                             <ExperienceContent
                                 key={role}
                                 role={role}
