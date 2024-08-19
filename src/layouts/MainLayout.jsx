@@ -8,7 +8,7 @@ const MainLayout = ({children}) => {
         <AnimatePresence mode="wait">
             {show && (
                 <motion.main
-                    className="lg:pl-28 2xl:pl-52"
+                    className="md:pl-36 xl:pl-52"
                     key="main-layout"
                     initial={{opacity: 0, scale: 0.75}}
                     animate={{opacity: 1, scale: 1}}

@@ -13,8 +13,8 @@ const ExperienceContent = ({key, role, company, description, from, to}) => {
             <p className="font-roboto mt-4">{description}</p>
 
             <span className="absolute h-full top-0 -left-2.5">
-                <span className="absolute text-nowrap -top-[17px] left-3 lg:-left-[71px]">{to}</span>
-                    <span className="absolute text-nowrap -bottom-[16px] left-3 lg:-left-[71px]">{from}</span>
+                <span className="absolute text-nowrap -top-[17px] left-3 xl:-left-[71px]">{to}</span>
+                    <span className="absolute text-nowrap -bottom-[16px] left-3 xl:-left-[71px]">{from}</span>
             </span>
         </div>
     );

@@ -4,7 +4,7 @@ const PageHeading = ({title, icon}) => {
             <h1 className="font-playfair font-bold text-orange-400 text-4xl">
                 {title}
             </h1>
-            <div className="hidden lg:block">
+            <div className="hidden md:block">
                 {icon}
             </div>
         </div>
